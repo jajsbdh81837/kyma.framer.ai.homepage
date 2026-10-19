@@ -9,7 +9,7 @@ import team1 from '@/assets/gallery-8.asset.json';
 import team2 from '@/assets/gallery-9.asset.json';
 export function KymaHero() {
  const [menu, setMenu] = useState(false); const [playing, setPlaying] = useState(false);
- return <><section className="dark-band hero" id="home"><div className="wrap">
+ return <><section className="dark-band hero" id="home"><div className="hero-watermark" aria-hidden="true">KYMA</div><div className="wrap">
   <header className="header"><a href="#home" className="wordmark" aria-label="Kyma home">ꓘYMA<sup>®</sup></a><Button variant="ghost" className="menu-button" onClick={() => setMenu(!menu)} aria-expanded={menu}>{menu ? <X/> : <Menu/>}<span>{menu ? 'Close' : 'Menu'}</span></Button></header>
   {menu && <nav className="menu-panel" aria-label="Main navigation">{([['Home','home'],['Who we are','about'],['Our services','services'],['How it works','process'],['Our team','team'],['Pricing','pricing'],['Contact','contact']] as const).map(([name,id])=><Button variant="ghost" key={id} onClick={()=>{document.getElementById(id)?.scrollIntoView({behavior:'smooth'});setMenu(false);}}>{name}<span>↗</span></Button>)}</nav>}
   <div className="hero-copy"><Label n="01">Eliminate your bottleneck</Label><h1>Scale your<br className="mobile-br"/> operations <em>[10x]</em> without hiring <em>[100]</em> people.</h1><div className="hero-description"><p>We build custom AI systems that handle your repetitive work, so you can focus on growth, not grunt work.</p><Action target="services">Our services</Action></div></div>
